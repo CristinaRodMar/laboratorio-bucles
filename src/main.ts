@@ -114,19 +114,16 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Pacientes
 //un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
 
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
-    let activarProctolo = false;
-    let i = 0;
-
-    while (i < pacientes.length && activarProctolo)
-    {
+    let activarProtocolo = false;
+    
+    for (let i = 0; i < pacientes.length; i++) {
         if (pacientes[i].frecuenciaCardiaca > 100 && pacientes[i].temperatura > 39)
         {
-            activarProctolo = true;
+            activarProtocolo = true;
         }
-        i++
     }
-
-    return activarProctolo;
+    console.log("¿Se debe activar el protocolo?", activarProtocolo)
+    return activarProtocolo;
 };
 
 //Apartado 3
